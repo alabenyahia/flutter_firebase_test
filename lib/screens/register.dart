@@ -71,12 +71,16 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 20.0),
+                  margin: const EdgeInsets.only(top: 8.0),
                   child: FilledButton(
                       onPressed: () {
                         debugPrint('Register pressed');
                       },
-                      child: const Text('Register')),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(38),
+                    ),
+                    child: const Text('Register'),
+                  ),
                 )
               ],
             ),

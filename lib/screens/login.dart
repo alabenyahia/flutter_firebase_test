@@ -61,11 +61,14 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 20.0),
+                  margin: const EdgeInsets.only(top: 8.0),
                   child: FilledButton(
                       onPressed: () {
                         debugPrint('Login pressed');
                       },
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size.fromHeight(38),
+                      ),
                       child: const Text('Login')
                   ),
                 )
