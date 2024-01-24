@@ -1,28 +1,30 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-class Register extends StatelessWidget {
-  const Register({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Register'),
+        title: const Text('Login'),
       ),
-      body: const RegisterForm(),
+      body: const LoginForm(),
     );
   }
 }
 
-class RegisterForm extends StatefulWidget {
-  const RegisterForm({super.key});
+class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
 
   @override
-  State<RegisterForm> createState() => _RegisterFormState();
+  State<LoginForm> createState() => _LoginFormState();
 }
 
-class _RegisterFormState extends State<RegisterForm> {
+class _LoginFormState extends State<LoginForm> {
   final formKey = GlobalKey<FormState>();
 
   @override
@@ -37,18 +39,6 @@ class _RegisterFormState extends State<RegisterForm> {
               children: <Widget>[
                 TextFormField(
                   decoration: const InputDecoration(
-                      icon: Icon(Icons.person),
-                      hintText: 'Enter you name',
-                      labelText: 'Name'),
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                      icon: Icon(Icons.contact_emergency),
-                      hintText: 'Enter you gym name',
-                      labelText: 'Gym name'),
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
                       icon: Icon(Icons.email),
                       hintText: 'Enter you email address',
                       labelText: 'Email address'),
@@ -61,15 +51,15 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                   obscureText: true,
                 ),
-                 Container(
-                   margin: const EdgeInsets.only(top: 20.0),
-                   child: FilledButton(
-                       onPressed: () {
-                         debugPrint('Register pressed');
-                       },
-                       child: const Text('Register')
-                   ),
-                 )
+                Container(
+                  margin: const EdgeInsets.only(top: 20.0),
+                  child: FilledButton(
+                      onPressed: () {
+                        debugPrint('Login pressed');
+                      },
+                      child: const Text('Login')
+                  ),
+                )
               ],
             ),
           )),
