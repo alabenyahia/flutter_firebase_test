@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class Register extends StatelessWidget {
   const Register({super.key});
 
@@ -14,7 +15,6 @@ class Register extends StatelessWidget {
   }
 }
 
-
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
 
@@ -24,47 +24,46 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    return Form(
-        key: formKey,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              TextFormField(
-                decoration: const InputDecoration(
-                    icon: Icon(Icons.person),
-                    hintText: 'Enter you name',
-                    labelText: 'Name'
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Form(
+          key: formKey,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                TextFormField(
+                  decoration: const InputDecoration(
+                      icon: Icon(Icons.person),
+                      hintText: 'Enter you name',
+                      labelText: 'Name'),
                 ),
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                    icon: Icon(Icons.contact_emergency),
-                    hintText: 'Enter you gym name',
-                    labelText: 'Gym name'
+                TextFormField(
+                  decoration: const InputDecoration(
+                      icon: Icon(Icons.contact_emergency),
+                      hintText: 'Enter you gym name',
+                      labelText: 'Gym name'),
                 ),
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                    icon: Icon(Icons.email),
-                    hintText: 'Enter you email address',
-                    labelText: 'Email address'
+                TextFormField(
+                  decoration: const InputDecoration(
+                      icon: Icon(Icons.email),
+                      hintText: 'Enter you email address',
+                      labelText: 'Email address'),
                 ),
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.password),
-                  hintText: 'Enter you password',
-                  labelText: 'Password',
-
+                TextFormField(
+                  decoration: const InputDecoration(
+                    icon: Icon(Icons.password),
+                    hintText: 'Enter you password',
+                    labelText: 'Password',
+                  ),
+                  obscureText: true,
                 ),
-                obscureText: true,
-              ),
-            ],
-          ),
-        )
+              ],
+            ),
+          )),
     );
   }
 }
