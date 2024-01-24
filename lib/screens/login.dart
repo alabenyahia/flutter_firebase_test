@@ -52,6 +52,15 @@ class _LoginFormState extends State<LoginForm> {
                   obscureText: true,
                 ),
                 Container(
+                  margin: const EdgeInsets.only(top: 12),
+                  child: const Row(
+                    children: <Widget>[
+                      Text('Don\'t have an account?'),
+                      TextButton(onPressed: null, child: Text('Register'))
+                    ],
+                  ),
+                ),
+                Container(
                   margin: const EdgeInsets.only(top: 20.0),
                   child: FilledButton(
                       onPressed: () {

@@ -61,15 +61,23 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                   obscureText: true,
                 ),
-                 Container(
-                   margin: const EdgeInsets.only(top: 20.0),
-                   child: FilledButton(
-                       onPressed: () {
-                         debugPrint('Register pressed');
-                       },
-                       child: const Text('Register')
-                   ),
-                 )
+                Container(
+                  margin: const EdgeInsets.only(top: 12),
+                  child: const Row(
+                    children: <Widget>[
+                      Text('Already a member?'),
+                      TextButton(onPressed: null, child: Text('Login'))
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 20.0),
+                  child: FilledButton(
+                      onPressed: () {
+                        debugPrint('Register pressed');
+                      },
+                      child: const Text('Register')),
+                )
               ],
             ),
           )),
