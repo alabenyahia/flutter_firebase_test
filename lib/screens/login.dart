@@ -1,6 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+
+import '../services/auth.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -27,6 +27,17 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   final formKey = GlobalKey<FormState>();
 
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -42,6 +53,7 @@ class _LoginFormState extends State<LoginForm> {
                       icon: Icon(Icons.email),
                       hintText: 'Enter you email address',
                       labelText: 'Email address'),
+                  controller: emailController,
                 ),
                 TextFormField(
                   decoration: const InputDecoration(
@@ -49,14 +61,17 @@ class _LoginFormState extends State<LoginForm> {
                     hintText: 'Enter you password',
                     labelText: 'Password',
                   ),
+                  controller: passwordController,
                   obscureText: true,
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 12),
-                  child: const Row(
+                  child:  Row(
                     children: <Widget>[
-                      Text('Don\'t have an account?'),
-                      TextButton(onPressed: null, child: Text('Register'))
+                      const Text('Don\'t have an account?'),
+                      TextButton(
+                          onPressed: () => Navigator.pushNamed(context, '/register'),
+                          child: const Text('Register'))
                     ],
                   ),
                 ),
@@ -64,7 +79,7 @@ class _LoginFormState extends State<LoginForm> {
                   margin: const EdgeInsets.only(top: 8.0),
                   child: FilledButton(
                       onPressed: () {
-                        debugPrint('Login pressed');
+                        AuthService().login(emailController.text, passwordController.text);
                       },
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size.fromHeight(38),

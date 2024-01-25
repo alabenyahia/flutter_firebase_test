@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playing_arroud/services/auth.dart';
 
 class Register extends StatelessWidget {
   const Register({super.key});
@@ -24,6 +25,17 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   final formKey = GlobalKey<FormState>();
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +64,7 @@ class _RegisterFormState extends State<RegisterForm> {
                       icon: Icon(Icons.email),
                       hintText: 'Enter you email address',
                       labelText: 'Email address'),
+                  controller: emailController,
                 ),
                 TextFormField(
                   decoration: const InputDecoration(
@@ -59,14 +72,17 @@ class _RegisterFormState extends State<RegisterForm> {
                     hintText: 'Enter you password',
                     labelText: 'Password',
                   ),
+                  controller: passwordController,
                   obscureText: true,
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 12),
-                  child: const Row(
+                  child:  Row(
                     children: <Widget>[
-                      Text('Already a member?'),
-                      TextButton(onPressed: null, child: Text('Login'))
+                      const Text('Already a member?'),
+                      TextButton(
+                          onPressed: () => Navigator.pushNamed(context, '/login'),
+                          child: const Text('Login'))
                     ],
                   ),
                 ),
@@ -74,7 +90,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   margin: const EdgeInsets.only(top: 8.0),
                   child: FilledButton(
                       onPressed: () {
-                        debugPrint('Register pressed');
+                        AuthService().register(emailController.text, passwordController.text);
                       },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(38),

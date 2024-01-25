@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "200796524762",
+    "project_id": "flutterapp-6c591",
+    "storage_bucket": "flutterapp-6c591.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200796524762:android:6d4a7e403c9649642c95e3",
+        "android_client_info": {
+          "package_name": "com.pickurapps.playing_arroud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtm_oRr7-hm6nnNiUrHA8srYT8iUbEF2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
