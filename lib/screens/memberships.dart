@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playing_arroud/shared/add_fab.dart';
 
 import '../shared/app_drawer.dart';
 
@@ -13,7 +14,8 @@ class Memberships extends StatelessWidget {
         title: const Text('Membership'),
       ),
       drawer: const AppDrawer(),
-      body: const Text('Memberships')
+      floatingActionButton: const AddFAB(path: '/add_membership'),
+      body: const Text('Memberships'),
     );
   }
 }

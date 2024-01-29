@@ -1,4 +1,6 @@
 
+import 'package:playing_arroud/screens/add_member.dart';
+import 'package:playing_arroud/screens/add_membership.dart';
 import 'package:playing_arroud/screens/dashboard.dart';
 import 'package:playing_arroud/screens/home.dart';
 import 'package:playing_arroud/screens/login.dart';
@@ -13,4 +15,6 @@ var appRoutes = {
   '/register' : (context) => const Register(),
   '/memberships' : (context) => const Memberships(),
   '/members' : (context) => const Members(),
+  '/add_membership' : (context) => const AddMembership(),
+  '/add_member' : (context) => const AddMember(),
 };
