@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playing_arroud/services/auth.dart';
+import 'package:playing_arroud/shared/app_drawer.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -11,6 +12,7 @@ class Dashboard extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Dashboard'),
       ),
+      drawer: const AppDrawer(),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
